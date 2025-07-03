@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form Validation</title>
+</head>
+<body>
+
+<h2>Simple Form</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+  <label>First Name:</label><br>
+  <input type="text" id="firstName"><br><br>
+
+  <label>Last Name:</label><br>
+  <input type="text" id="lastName"><br><br>
+
+  <label>Email:</label><br>
+  <input type="text" id="email"><br><br>
+
+  <label>Phone Number:</label><br>
+  <input type="text" id="phone"><br><br>
+
+  <label>Password:</label><br>
+  <input type="password" id="password"><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+  const firstName = document.getElementById("firstName").value.trim();
+  const lastName = document.getElementById("lastName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const password = document.getElementById("password").value;
+
+  // Regular Expressions
+  const nameRegex = /^[A-Za-z]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]{7,15}$/;
+  const passwordRegex = /^.{6,}$/; // At least 6 characters
+
+  if (!nameRegex.test(firstName)) {
+    alert("Invalid first name. Use only letters.");
+    return false;
+  }
+
+
+
+  alert("Form submitted successfully!");
+  return true;
+}
+</script>
+
+</body>
+</html>
