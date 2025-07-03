@@ -35,10 +35,11 @@ function validateForm() {
   const password = document.getElementById("password").value;
 
   // Regular Expressions
-  const nameRegex = /^[A-Za-z]+$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[0-9]{7,15}$/;
-  const passwordRegex = /^.{6,}$/; // At least 6 characters
+    const nameRegex = /^[A-Za-z]+$/; // Only letters (A–Z, a–z), at least one
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format (no space, one @, one .)
+    const phoneRegex = /^[0-9]{7,15}$/; // 7 to 15 digits only
+    const passwordRegex = /^.{6,}$/; // Any 6 or more characters
+
 
   if (!nameRegex.test(firstName)) {
     alert("Invalid first name. Use only letters.");
